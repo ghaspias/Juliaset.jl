@@ -71,6 +71,10 @@ juliaset(c1::Float64, c2::Float64) = pngbytes(genmandelset(c1, c2))
 juliaset(s1::AbstractString, s2::AbstractString) = juliaset(parse(Float64, s1), parse(Float64, s2))
 juliaset() = juliaset(rand(), rand())
 
+function workdir
+    str = pwd();
+end
+    
 const PNG_HEADER = @compat Dict{AbstractString,AbstractString}("Content-Type" => "image/png")
 const TXT_HEADER = @compat Dict{AbstractString,AbstractString}("Content-Type" => "text/plain")
 const JULIABOX_APIS = [
