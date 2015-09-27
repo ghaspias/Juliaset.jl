@@ -71,7 +71,7 @@ juliaset(c1::Float64, c2::Float64) = pngbytes(genmandelset(c1, c2))
 juliaset(s1::AbstractString, s2::AbstractString) = juliaset(parse(Float64, s1), parse(Float64, s2))
 juliaset() = juliaset(rand(), rand())
 
-function workdir
+function workdir()
     str = pwd();
 end
     
