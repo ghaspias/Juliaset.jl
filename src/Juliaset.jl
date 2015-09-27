@@ -33,6 +33,7 @@ function genmandelset(c1::Float64=0.0, c2::Float64=0.65, w::Int=200, h::Int=200)
         idx += 1
     end
     
+    # todo: return a indexed image
     grayim(a)
 end
 
