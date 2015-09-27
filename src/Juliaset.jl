@@ -24,7 +24,8 @@ function genmandelset(c1::Float64=0.0, c2::Float64=0.65, w::Int=200, h::Int=200)
     a = Array(UInt8, w, h)
 
     c = c1 + c2 * im
-
+    
+    idx = 1
     for r_val in linspace(-2.0, 2.0, w), im_val in linspace(-2.0, 2.0, h)
         z = r_val + im_val*im
         n = 255
