@@ -5,6 +5,7 @@ using Compat
 using JuliaWebAPI
 
 export juliaset
+export workdir
 
 ## mandelbrot set: complex arithmetic and comprehensions ##
 
@@ -71,8 +72,10 @@ juliaset(s1::AbstractString, s2::AbstractString) = juliaset(parse(Float64, s1), 
 juliaset() = juliaset(rand(), rand())
 
 const PNG_HEADER = @compat Dict{AbstractString,AbstractString}("Content-Type" => "image/png")
+const TXT_HEADER = @compat Dict{AbstractString,AbstractString}("Content-Type" => "text/plain")
 const JULIABOX_APIS = [
         (juliaset, false, PNG_HEADER)
+        (workdir, false, TXT_HEADER)
     ]
 
 serve_juliabox() = process(JULIABOX_APIS)
